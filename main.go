@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"runtime"
+)
 
 var y int
 
@@ -20,4 +23,7 @@ func test_func(result int) {
 	fmt.Printf("Result: %v\n", result)
 
 	fmt.Println(y)
+
+	fmt.Println(runtime.GOOS)
+	fmt.Println(runtime.GOARCH)
 }
