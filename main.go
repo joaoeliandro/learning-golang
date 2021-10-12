@@ -42,15 +42,18 @@ func http_example() {
 
 	log.Println("Starting server...")
 	l, err := net.Listen("tcp", "localhost:8080")
+
 	if err != nil {
 		log.Fatal(err)
 	}
+
 	go func() {
 		log.Fatal(http.Serve(l, nil))
 	}()
 
 	log.Println("Sending request...")
 	res, err := http.Get("http://localhost:8080/hello")
+
 	if err != nil {
 		log.Fatal(err)
 	}
